@@ -1,3 +1,8 @@
+import qb from "../images/qb.png";
+import dating from "../images/lyfeStyle.png";
+import wil from "../images/wil.png";
+import planit from "../images/planIt.png";
+import igSmart from "../images/image.png";
 export const Bio = {
   name: "Rishav Chanda",
   roles: ["Frontend Developer", "React Developer", "Programmer"],
@@ -249,7 +254,7 @@ export const projects = [
     title: "QB",
     description:
       "QB is a project designed for managing football team dynamics, offering tailored interfaces for admins, coaches, and quarterbacks to streamline team coordination, strategy development, and performance analysis.",
-    image: "./QB.png",
+    image: qb,
     tags: ["React Js", "Node Js", "React Flow", "Dot Net"],
     category: "web app",
     webapp: "https://st-qb-target-admin.npit.pro/",
@@ -260,7 +265,7 @@ export const projects = [
     date: "",
     description:
       "Lifestyles is not just a dating app; it’s a groundbreaking platform designed to celebrate love and connections in all their diverse forms. Whether you’re single, a couple, identify within the LGBTQ+ spectrum, or part of the kink community, Lifestyles is your welcoming haven. Here’s what makes Lifestyles truly inclusive.",
-    image: "./lyfeStyle.png",
+    image: dating,
     tags: ["React", "React Bootstarp", "TypeScript", "Dot Net"],
     category: "web app",
     github: "",
@@ -271,7 +276,7 @@ export const projects = [
     title: "WIL",
     description:
       "Developed a full-stack web application that allows users to search for, play, and pause their favorite podcasts on demand and create podcasts. Implemented user authentication using Google Auth and Jwt Auth, made responsive user interface with React JS that provides users with a seamless experience across all devices. Practiced agile methodologies to optimize team efficiency and communication.",
-    image: "./wil.png",
+    image: wil,
     tags: [
       "Next JS",
       "Ant Design",
@@ -290,7 +295,7 @@ export const projects = [
     title: "PlanIt",
     description:
       "PlanIt is a  project management tool that uses boards, lists, and cards to help teams organize tasks and collaborate efficiently. Each board represents a project, and lists within the board represent stages of the project (e.g., To Do, In Progress, Done). The cards on the lists represent individual tasks, which can be assigned to team members, given deadlines, and enhanced with attachments, comments, and checklists.",
-    image: "planIt.png",
+    image: planit,
     tags: [
       "React Js",
       "MongoDb",
@@ -307,7 +312,7 @@ export const projects = [
     title: "IG-Smart",
     description:
       "IG Smart is a boutique IT & Management Consultancy which helps organisations to overcome complex Dig.",
-    image: "image.png",
+    image: igSmart,
     tags: ["React Js", "Ant Design", "TypeScript", "Styled COmponent"],
     category: "web app",
     webapp: "https://planit.thewitslab.com/login",

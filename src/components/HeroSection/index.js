@@ -46,7 +46,7 @@ const HeroSection = () => {
             <SubTitle>{Bio.description}</SubTitle>
             <ResumeButton
               href={
-                "https://drive.google.com/file/d/1l6yjeiffFfZZJZBnIhNvZeIar_WoBGv5/view?usp=sharing"
+                "https://drive.google.com/file/d/1Gjz-_3pArLXm2IF5XV0Ibf_NnvYuSMDV/view?usp=sharing"
               }
               target="display"
             >

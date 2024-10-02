@@ -317,6 +317,16 @@ export const projects = [
     category: "web app",
     webapp: "https://planit.thewitslab.com/login",
   },
+  {
+    id: 2,
+    title: "Electro-Cart",
+    description:
+      "IG Smart is a boutique IT & Management Consultancy which helps organisations to overcome complex Dig.",
+    image: igSmart,
+    tags: ["React Js", "Ant Design", "TypeScript", "Styled COmponent"],
+    category: "web app",
+    webapp: "https://planit.thewitslab.com/login",
+  },
 
   // https://ig-smart.com/
 ];

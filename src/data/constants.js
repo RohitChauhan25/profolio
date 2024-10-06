@@ -3,6 +3,7 @@ import dating from "../images/lyfeStyle.png";
 import wil from "../images/wil.png";
 import planit from "../images/planIt.png";
 import igSmart from "../images/image.png";
+import electro from "../images/electro.png";
 export const Bio = {
   name: "Rishav Chanda",
   roles: ["Frontend Developer", "React Developer", "Programmer"],
@@ -321,20 +322,20 @@ export const projects = [
     id: 2,
     title: "Electro-Cart",
     description:
-      "IG Smart is a boutique IT & Management Consultancy which helps organisations to overcome complex Dig.",
-    image: igSmart,
-    tags: ["React Js", "Ant Design", "TypeScript", "Styled COmponent"],
+      "Electro-Cart is a fully functional e-commerce platform specializing in electronic gadgets, leveraging the MERN stack for robust and efficient development.",
+    image: electro,
+    tags: [
+      "React Js",
+      "Ant Design",
+      "TypeScript",
+      "Styled COmponent",
+      "Node",
+      "Express",
+      "MongoDB",
+    ],
     category: "web app",
     webapp: "https://planit.thewitslab.com/login",
   },
 
   // https://ig-smart.com/
-];
-
-export const TimeLineData = [
-  { year: 2017, text: "Started my journey" },
-  { year: 2018, text: "Worked as a freelance developer" },
-  { year: 2019, text: "Founded JavaScript Mastery" },
-  { year: 2020, text: "Shared my projects with the world" },
-  { year: 2021, text: "Started my own platform" },
 ];

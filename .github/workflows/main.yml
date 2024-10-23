@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-
+      
 env:
   CI: false
 
@@ -14,42 +14,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout repository (using Node.js 20)
       - name: Checkout repo
-        uses: actions/checkout@v3
-        with:
-          node-version: '20'
+        uses: actions/checkout@v2
 
-      # Step 2: Setup Node.js (using Node.js 20)
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Node
+        uses: actions/setup-node@v1
         with:
-          node-version: 18  # This is for your actual project, but action will use Node.js 20 internally
+          node-version: 18
 
-      # Step 3: Cache Node.js modules (using Node.js 20)
-      - name: Cache Node.js modules
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      # Step 4: Install dependencies
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
-      # Step 5: Clean build directory (optional)
-      - name: Clean build directory
-        run: rm -rf ./build
-
-      # Step 6: Build the project
       - name: Build project
         run: npm run build
 
-      # Step 7: Upload production-ready build files (using v3 of upload-artifact)
       - name: Upload production-ready build files
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: production-files
           path: ./build
@@ -61,16 +41,14 @@ jobs:
     if: github.ref == 'refs/heads/main'
 
     steps:
-      # Step 8: Download the artifact (using v3 of download-artifact)
       - name: Download artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v2
         with:
           name: production-files
           path: ./build
 
-      # Step 9: Deploy to GitHub Pages (using peaceiris/actions-gh-pages@v3)
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.TOKEN }}
           publish_dir: ./build

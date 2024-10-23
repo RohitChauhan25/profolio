@@ -22,17 +22,30 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
 
-      # Step 3: Install dependencies (using latest bahmutov version)
+      # Step 3: Cache Node.js modules (optional, for faster builds)
+      - name: Cache Node.js modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # Step 4: Install dependencies
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
-      # Step 4: Build the project
+      # Step 5: Clean build directory (optional)
+      - name: Clean build directory
+        run: rm -rf ./build
+
+      # Step 6: Build the project
       - name: Build project
         run: npm run build
 
-      # Step 5: Upload production-ready build files (using v3 of upload-artifact)
+      # Step 7: Upload production-ready build files (using v3 of upload-artifact)
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v3
         with:
@@ -46,14 +59,14 @@ jobs:
     if: github.ref == 'refs/heads/main'
 
     steps:
-      # Step 6: Download the artifact (using v3 of download-artifact)
+      # Step 8: Download the artifact (using v3 of download-artifact)
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
           name: production-files
           path: ./build
 
-      # Step 7: Deploy to GitHub Pages (using peaceiris/actions-gh-pages@v3)
+      # Step 9: Deploy to GitHub Pages (using peaceiris/actions-gh-pages@v3)
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:

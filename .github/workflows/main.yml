@@ -14,17 +14,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout repository (using v3)
+      # Step 1: Checkout repository (using Node.js 20)
       - name: Checkout repo
         uses: actions/checkout@v3
+        with:
+          node-version: '20'
 
-      # Step 2: Setup Node.js (using v3)
+      # Step 2: Setup Node.js (using Node.js 20)
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 18  # This is for your actual project, but action will use Node.js 20 internally
 
-      # Step 3: Cache Node.js modules (optional, for faster builds)
+      # Step 3: Cache Node.js modules (using Node.js 20)
       - name: Cache Node.js modules
         uses: actions/cache@v3
         with:

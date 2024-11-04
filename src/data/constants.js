@@ -316,7 +316,7 @@ export const projects = [
     image: igSmart,
     tags: ["React Js", "Ant Design", "TypeScript", "Styled COmponent"],
     category: "web app",
-    webapp: "https://planit.thewitslab.com/login",
+    webapp: "https://ig-smart.com/",
   },
   {
     id: 2,
